@@ -18,19 +18,16 @@
   html,body{background:var(--bg);color:var(--white);font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
   .container{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-  /* Hero */
   .hero{position:relative;padding:72px 0 48px;border-bottom:1px solid var(--border);overflow:hidden}
   .hero-eyebrow{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.02em}
   .hero h1 .accent{color:var(--gold)}
   .hero-bg-word{position:absolute;right:-40px;top:30px;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(120px,18vw,220px);color:rgba(240,165,0,.04);letter-spacing:-.04em;line-height:1;pointer-events:none;user-select:none}
 
-  /* Sections */
   .section{padding:56px 0;border-bottom:1px solid var(--border)}
   .section-num{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
   .section h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(22px,2.8vw,30px);letter-spacing:-.01em;margin-bottom:28px}
 
-  /* Tables (transposed: metrics in rows, weeks in cols) */
   .table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px}
   thead th{font-family:'Syne',sans-serif;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface2);padding:14px 16px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
@@ -42,13 +39,11 @@
   tbody tr:last-child td{border-bottom:none}
   .row-sub{color:var(--muted);font-weight:400;font-size:12px;display:block;margin-top:2px}
 
-  /* Goals block */
   .goals{padding:48px 0 64px}
   .goals h3{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .goals ul{list-style:none;display:grid;gap:10px}
   .goals li{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;font-size:14px;color:var(--white);display:flex;align-items:baseline;gap:14px}
   .goals li .tag{font-family:'Syne',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);border-radius:6px;padding:3px 10px;flex-shrink:0}
-  .goals li .name{color:var(--white)}
   .goals li .id{color:var(--muted);font-size:12px;margin-left:auto;font-variant-numeric:tabular-nums}
 
   footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:'Syne',sans-serif}
@@ -68,7 +63,7 @@
 <section class="section">
   <div class="container">
     <div class="section-num">Таблица 01 · 2025</div>
-    <h2>Май 2025</h2>
+    <h2>Май 2025 — сводка</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -77,7 +72,7 @@
             <th>5–11 мая</th>
             <th>12–18 мая</th>
             <th>19–25 мая</th>
-            <th>26–28 мая<span class="row-sub" style="display:inline;color:var(--muted);font-size:10px;margin-left:4px">3 дня</span></th>
+            <th>26–28 мая</th>
             <th class="total">Итого</th>
           </tr>
         </thead>
@@ -107,12 +102,12 @@
             <td class="total">15,07</td>
           </tr>
           <tr>
-            <td>Визиты<span class="row-sub">Метрика, Я.Директ + не определено</span></td>
-            <td>701</td>
-            <td>648</td>
-            <td>624</td>
-            <td>404</td>
-            <td class="total">2 377</td>
+            <td>Визиты<span class="row-sub">Метрика, Яндекс.Директ</span></td>
+            <td>694</td>
+            <td>629</td>
+            <td>613</td>
+            <td>399</td>
+            <td class="total">2 335</td>
           </tr>
         </tbody>
       </table>
@@ -123,7 +118,7 @@
 <section class="section">
   <div class="container">
     <div class="section-num">Таблица 02 · 2026</div>
-    <h2>Май 2026</h2>
+    <h2>Май 2026 — сводка</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -132,7 +127,7 @@
             <th>5–11 мая</th>
             <th>12–18 мая</th>
             <th>19–25 мая</th>
-            <th>26–28 мая<span class="row-sub" style="display:inline;color:var(--muted);font-size:10px;margin-left:4px">3 дня</span></th>
+            <th>26–28 мая</th>
             <th class="total">Итого</th>
           </tr>
         </thead>
@@ -162,12 +157,90 @@
             <td class="total">18,10</td>
           </tr>
           <tr>
-            <td>Визиты<span class="row-sub">Метрика, Я.Директ + не определено</span></td>
-            <td>1 153</td>
-            <td>1 140</td>
-            <td>749</td>
-            <td>268</td>
-            <td class="total">3 310</td>
+            <td>Визиты<span class="row-sub">Метрика, Яндекс.Директ</span></td>
+            <td>1 110</td>
+            <td>1 113</td>
+            <td>731</td>
+            <td>269</td>
+            <td class="total">3 223</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 03 · 2025</div>
+    <h2>Май 2025 — целевые конверсии</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Цель</th>
+            <th>5–11 мая</th>
+            <th>12–18 мая</th>
+            <th>19–25 мая</th>
+            <th>26–28 мая</th>
+            <th class="total">Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Отправка формы «Купить в рассрочку»<span class="row-sub">gtm · id 409379938</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="total">0</td>
+          </tr>
+          <tr>
+            <td>Успешный заказ<span class="row-sub">gtm · id 409382040</span></td>
+            <td>1</td>
+            <td>8</td>
+            <td>14</td>
+            <td>6</td>
+            <td class="total">29</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 04 · 2026</div>
+    <h2>Май 2026 — целевые конверсии</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Цель</th>
+            <th>5–11 мая</th>
+            <th>12–18 мая</th>
+            <th>19–25 мая</th>
+            <th>26–28 мая</th>
+            <th class="total">Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Отправка формы «Купить в рассрочку»<span class="row-sub">gtm · id 409379938</span></td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="total">1</td>
+          </tr>
+          <tr>
+            <td>Успешный заказ<span class="row-sub">gtm · id 409382040</span></td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td class="total">2</td>
           </tr>
         </tbody>
       </table>
@@ -181,17 +254,17 @@
     <ul>
       <li>
         <span class="tag">Цель</span>
-        <span class="name">shulz.by — gtm — Отправка формы «Купить в рассрочку»</span>
+        <span>shulz.by — gtm — Отправка формы «Купить в рассрочку»</span>
         <span class="id">id 409379938</span>
       </li>
       <li>
         <span class="tag">Цель</span>
-        <span class="name">shulz.by — gtm — Успешный заказ</span>
+        <span>shulz.by — gtm — Успешный заказ</span>
         <span class="id">id 409382040</span>
       </li>
       <li>
         <span class="tag">Автоцель</span>
-        <span class="name">Клик по номеру телефона</span>
+        <span>Клик по номеру телефона</span>
         <span class="id">id 173287135</span>
       </li>
     </ul>
