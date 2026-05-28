@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Shulz · Яндекс.Директ — недельный отчёт</title>
+<title>Shulz · недельный отчёт</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
@@ -18,11 +18,19 @@
   html,body{background:var(--bg);color:var(--white);font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
   .container{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-  .hero{position:relative;padding:72px 0 48px;border-bottom:1px solid var(--border);overflow:hidden}
+  .hero{position:relative;padding:72px 0 36px;border-bottom:1px solid var(--border);overflow:hidden}
   .hero-eyebrow{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.02em}
   .hero h1 .accent{color:var(--gold)}
   .hero-bg-word{position:absolute;right:-40px;top:30px;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(120px,18vw,220px);color:rgba(240,165,0,.04);letter-spacing:-.04em;line-height:1;pointer-events:none;user-select:none}
+
+  /* Platform switcher (segmented control) */
+  .switcher-wrap{padding:28px 0 8px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:10}
+  .switcher{display:inline-flex;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:5px;gap:4px}
+  .switcher button{appearance:none;border:0;background:transparent;color:var(--muted);font-family:'Syne',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:10px 22px;border-radius:999px;cursor:pointer;transition:color .15s,background .15s}
+  .switcher button:hover{color:var(--white)}
+  .switcher button.active{background:var(--gold);color:#0b0c10}
+  .switcher-hint{margin-top:14px;font-size:12px;color:var(--muted);letter-spacing:.04em}
 
   .section{padding:56px 0;border-bottom:1px solid var(--border)}
   .section-num{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
@@ -48,6 +56,10 @@
 
   footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:'Syne',sans-serif}
   footer b{color:var(--gold);font-weight:600}
+
+  /* Platform visibility */
+  .platform{display:none}
+  .platform.active{display:block}
 </style>
 </head>
 <body>
@@ -56,9 +68,22 @@
   <div class="hero-bg-word">SHULZ</div>
   <div class="container">
     <div class="hero-eyebrow">Shulz · shulz.by · Минск</div>
-    <h1>Яндекс.Директ — <span class="accent">сравнение по неделям</span></h1>
+    <h1><span id="platform-name">Яндекс.Директ</span> — <span class="accent">сравнение по неделям</span></h1>
   </div>
 </header>
+
+<div class="switcher-wrap">
+  <div class="container">
+    <div class="switcher" role="tablist" aria-label="Выбор площадки">
+      <button type="button" data-platform="yandex" class="active" role="tab" aria-selected="true">Яндекс.Директ</button>
+      <button type="button" data-platform="google" role="tab" aria-selected="false">Google Ads</button>
+    </div>
+    <div class="switcher-hint">Выбери площадку, чтобы посмотреть отчёт по ней</div>
+  </div>
+</div>
+
+<!-- =================== ЯНДЕКС.ДИРЕКТ =================== -->
+<div class="platform active" data-platform="yandex">
 
 <section class="section">
   <div class="container">
@@ -193,11 +218,191 @@
   </div>
 </section>
 
+</div>
+<!-- =================== /ЯНДЕКС =================== -->
+
+
+<!-- =================== GOOGLE ADS =================== -->
+<div class="platform" data-platform="google">
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 01 · 2025</div>
+    <h2>Май 2025 — сводка</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>5–11 мая</th>
+            <th>12–18 мая</th>
+            <th>19–25 мая</th>
+            <th>26–28 мая</th>
+            <th class="total">Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Расход, USD<span class="row-sub">Google Ads</span></td>
+            <td>117,95</td>
+            <td>115,94</td>
+            <td>117,76</td>
+            <td>37,89</td>
+            <td class="total">389,54</td>
+          </tr>
+          <tr>
+            <td>Конверсии<span class="row-sub">3 цели Google Ads</span></td>
+            <td>11</td>
+            <td>9</td>
+            <td>6</td>
+            <td>0</td>
+            <td class="total">26</td>
+          </tr>
+          <tr>
+            <td>Стоимость конверсии, USD<span class="row-sub">расход ÷ конверсии</span></td>
+            <td>10,72</td>
+            <td>12,88</td>
+            <td>19,63</td>
+            <td>—</td>
+            <td class="total">14,98</td>
+          </tr>
+          <tr>
+            <td>Клики<span class="row-sub">Google Ads</span></td>
+            <td>1 247</td>
+            <td>1 784</td>
+            <td>2 592</td>
+            <td>1 140</td>
+            <td class="total">6 763</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 02 · 2026</div>
+    <h2>Май 2026 — сводка</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>5–11 мая</th>
+            <th>12–18 мая</th>
+            <th>19–25 мая</th>
+            <th>26–28 мая</th>
+            <th class="total">Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Расход, USD<span class="row-sub">Google Ads</span></td>
+            <td>87,23</td>
+            <td>71,06</td>
+            <td>70,12</td>
+            <td>23,33</td>
+            <td class="total">251,74</td>
+          </tr>
+          <tr>
+            <td>Конверсии<span class="row-sub">3 цели Google Ads</span></td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="total">3</td>
+          </tr>
+          <tr>
+            <td>Стоимость конверсии, USD<span class="row-sub">расход ÷ конверсии</span></td>
+            <td>43,62</td>
+            <td>71,06</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="total">83,91</td>
+          </tr>
+          <tr>
+            <td>Клики<span class="row-sub">Google Ads</span></td>
+            <td>792</td>
+            <td>709</td>
+            <td>722</td>
+            <td>173</td>
+            <td class="total">2 396</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="goals">
+  <div class="container">
+    <h3>Какие конверсии мы считаем</h3>
+    <ul>
+      <li>
+        <span class="tag">Цель</span>
+        <span>shulz.by — Google Ads — Отправка формы «Купить в рассрочку»</span>
+        <span class="id">id 7113979439</span>
+      </li>
+      <li>
+        <span class="tag">Цель</span>
+        <span>shulz.by — Google Ads — Успешный заказ</span>
+        <span class="id">id 7113979568</span>
+      </li>
+      <li>
+        <span class="tag">Цель</span>
+        <span>shulz.by — Google Ads — Клик по номеру телефона</span>
+        <span class="id">id 7113979436</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</div>
+<!-- =================== /GOOGLE ADS =================== -->
+
+
 <footer>
   <div class="container">
-    OpenClaw · <b>Shulz</b> · Яндекс.Директ · Минск
+    OpenClaw · <b>Shulz</b> · <span id="platform-footer">Яндекс.Директ</span> · Минск
   </div>
 </footer>
+
+<script>
+  (function(){
+    var STORE = 'shulz_report_platform';
+    var NAMES = { yandex: 'Яндекс.Директ', google: 'Google Ads' };
+
+    var buttons = document.querySelectorAll('.switcher button');
+    var panels  = document.querySelectorAll('.platform');
+    var heroName = document.getElementById('platform-name');
+    var footName = document.getElementById('platform-footer');
+
+    function activate(name){
+      if(!NAMES[name]) name = 'yandex';
+      buttons.forEach(function(b){
+        var on = b.dataset.platform === name;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function(p){
+        p.classList.toggle('active', p.dataset.platform === name);
+      });
+      heroName.textContent = NAMES[name];
+      footName.textContent = NAMES[name];
+      try { localStorage.setItem(STORE, name); } catch(e){}
+    }
+
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){ activate(b.dataset.platform); });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem(STORE); } catch(e){}
+    var initial = (location.hash || '').replace('#','') || saved || 'yandex';
+    activate(initial);
+  })();
+</script>
 
 </body>
 </html>
