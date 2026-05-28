@@ -54,6 +54,20 @@
   .goals li .tag{font-family:'Syne',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);border-radius:6px;padding:3px 10px;flex-shrink:0}
   .goals li .id{color:var(--muted);font-size:12px;margin-left:auto;font-variant-numeric:tabular-nums}
 
+  /* Work-over-account block */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+  @media (max-width:720px){.work-grid{grid-template-columns:1fr}}
+  .work-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;gap:14px}
+  .work-card.highlight{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold-dim) inset}
+  .work-card-year{font-family:'Syne',sans-serif;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .work-card.highlight .work-card-year{color:var(--gold)}
+  .work-card-num{font-family:'Syne',sans-serif;font-weight:800;font-size:42px;line-height:1;letter-spacing:-.02em;color:var(--white)}
+  .work-card.highlight .work-card-num{color:var(--gold)}
+  .work-card-sub{color:var(--muted);font-size:13px;margin-top:-6px}
+  .work-card img{display:block;max-width:100%;height:auto;border-radius:var(--r);border:1px solid var(--border);background:#fff;align-self:flex-start}
+  .work-summary{margin-top:24px;background:var(--gold-dim);border:1px solid var(--gold);border-radius:var(--r);padding:16px 20px;font-size:15px;color:var(--white);text-align:center}
+  .work-summary b{color:var(--gold);font-family:'Syne',sans-serif;font-weight:700}
+
   footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:'Syne',sans-serif}
   footer b{color:var(--gold);font-weight:600}
 
@@ -195,6 +209,28 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 03 · Работа над аккаунтом</div>
+    <h2>Минус-фразы — что добавили за год</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-card-year">Май 2025</div>
+        <div class="work-card-num">65 фраз</div>
+        <div class="work-card-sub">База минус-слов до старта новой работы</div>
+        <img src="img/minus_yandex_2025.jpg" alt="65 минус-фраз — Яндекс.Директ, май 2025" loading="lazy" />
+      </div>
+      <div class="work-card highlight">
+        <div class="work-card-year">Май 2026</div>
+        <div class="work-card-num">456 фраз</div>
+        <div class="work-card-sub">База после еженедельной чистки поисковых запросов</div>
+        <img src="img/minus_yandex_2026.jpg" alt="456 минус-фраз — Яндекс.Директ, май 2026" loading="lazy" />
+      </div>
+    </div>
+    <div class="work-summary"><b>+391 минус-фраза</b> за год · рост базы исключений <b>×7</b></div>
+  </div>
+</section>
+
 <section class="goals">
   <div class="container">
     <h3>Какие конверсии мы считаем</h3>
@@ -332,6 +368,27 @@
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 03 · Работа над аккаунтом</div>
+    <h2>Ключевые фразы — что добавили за год</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-card-year">Май 2025</div>
+        <div class="work-card-num">260 фраз</div>
+        <div class="work-card-sub">База ключевых фраз до старта новой работы</div>
+      </div>
+      <div class="work-card highlight">
+        <div class="work-card-year">Май 2026</div>
+        <div class="work-card-num">854 фразы</div>
+        <div class="work-card-sub">База после пересборки семантики и расширения групп</div>
+        <img src="img/minus_google_2026.jpg" alt="Ключевые фразы — Google Ads, май 2026" loading="lazy" />
+      </div>
+    </div>
+    <div class="work-summary"><b>+594 ключевые фразы</b> за год · рост базы семантики <b>×3,3</b></div>
   </div>
 </section>
 
