@@ -66,19 +66,11 @@
   .work-card-sub{color:var(--muted);font-size:13px;margin-top:-6px}
   .work-card img{display:block;max-width:100%;height:auto;border-radius:var(--r);border:1px solid var(--border);background:#fff;align-self:flex-start}
 
-  /* Carousel inside work-card */
-  .carousel{position:relative;width:100%}
-  .carousel-window{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;min-height:180px;display:flex;align-items:center;justify-content:center}
-  .carousel-slide{display:none;max-width:100%;height:auto;background:#fff}
-  .carousel-slide.active{display:block}
-  .carousel-nav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:0;background:rgba(11,12,16,.65);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;line-height:1;padding:0;font-family:'Syne',sans-serif;font-weight:700;z-index:2}
-  .carousel-nav:hover{background:var(--gold);color:#0b0c10}
-  .carousel-nav.prev{left:8px}
-  .carousel-nav.next{right:8px}
-  .carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
-  .carousel-dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--border);cursor:pointer;padding:0;transition:background .15s}
-  .carousel-dots button.active{background:var(--gold)}
-  .carousel-counter{position:absolute;top:8px;right:10px;font-family:'Syne',sans-serif;font-size:11px;letter-spacing:.08em;color:#0b0c10;background:rgba(255,255,255,.85);border-radius:6px;padding:3px 8px;z-index:2}
+  /* Mini-grid of screenshots inside work-card */
+  .shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .shot-grid figure{margin:0;display:flex;flex-direction:column;gap:4px}
+  .shot-grid img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);background:#fff}
+  .shot-grid figcaption{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center}
   .work-summary{margin-top:24px;background:var(--gold-dim);border:1px solid var(--gold);border-radius:var(--r);padding:16px 20px;font-size:15px;color:var(--white);text-align:center}
   .work-summary b{color:var(--gold);font-family:'Syne',sans-serif;font-weight:700}
 
@@ -394,22 +386,23 @@
         <div class="work-card-year">Май 2025</div>
         <div class="work-card-num">260 фраз</div>
         <div class="work-card-sub">База ключевых фраз до старта новой работы · 4 группы</div>
-        <div class="carousel" data-carousel>
-          <div class="carousel-window">
-            <span class="carousel-counter"><span data-current>1</span> / 4</span>
-            <img class="carousel-slide active" src="img/google_2025.jpg"   alt="Группа ключевых слов 1 — 96 фраз — Google Ads, май 2025" loading="lazy" />
-            <img class="carousel-slide"        src="img/google_2025_b.jpg" alt="Группа ключевых слов 2 — 74 фразы — Google Ads, май 2025" loading="lazy" />
-            <img class="carousel-slide"        src="img/google_2025_c.jpg" alt="Группа ключевых слов 3 — 20 фраз — Google Ads, май 2025" loading="lazy" />
-            <img class="carousel-slide"        src="img/google_2025_d.jpg" alt="Группа ключевых слов 4 — 70 фраз — Google Ads, май 2025" loading="lazy" />
-            <button type="button" class="carousel-nav prev" aria-label="Предыдущий">‹</button>
-            <button type="button" class="carousel-nav next" aria-label="Следующий">›</button>
-          </div>
-          <div class="carousel-dots" role="tablist" aria-label="Слайды">
-            <button type="button" class="active" aria-label="Слайд 1"></button>
-            <button type="button" aria-label="Слайд 2"></button>
-            <button type="button" aria-label="Слайд 3"></button>
-            <button type="button" aria-label="Слайд 4"></button>
-          </div>
+        <div class="shot-grid">
+          <figure>
+            <img src="img/google_2025.jpg"   alt="Группа ключевых слов 1 — 96 фраз" loading="lazy" />
+            <figcaption>Группа 1 · 96 фраз</figcaption>
+          </figure>
+          <figure>
+            <img src="img/google_2025_b.jpg" alt="Группа ключевых слов 2 — 74 фразы" loading="lazy" />
+            <figcaption>Группа 2 · 74 фразы</figcaption>
+          </figure>
+          <figure>
+            <img src="img/google_2025_c.jpg" alt="Группа ключевых слов 3 — 20 фраз" loading="lazy" />
+            <figcaption>Группа 3 · 20 фраз</figcaption>
+          </figure>
+          <figure>
+            <img src="img/google_2025_d.jpg" alt="Группа ключевых слов 4 — 70 фраз" loading="lazy" />
+            <figcaption>Группа 4 · 70 фраз</figcaption>
+          </figure>
         </div>
       </div>
       <div class="work-card highlight">
@@ -491,26 +484,6 @@
     activate(initial);
   })();
 
-  // Carousel
-  (function(){
-    document.querySelectorAll('[data-carousel]').forEach(function(c){
-      var slides  = c.querySelectorAll('.carousel-slide');
-      var dots    = c.querySelectorAll('.carousel-dots button');
-      var prev    = c.querySelector('.carousel-nav.prev');
-      var next    = c.querySelector('.carousel-nav.next');
-      var counter = c.querySelector('[data-current]');
-      var i = 0;
-      function show(n){
-        i = (n + slides.length) % slides.length;
-        slides.forEach(function(s, idx){ s.classList.toggle('active', idx === i); });
-        dots.forEach(function(d, idx){ d.classList.toggle('active', idx === i); });
-        if (counter) counter.textContent = (i + 1);
-      }
-      dots.forEach(function(d, idx){ d.addEventListener('click', function(){ show(idx); }); });
-      if (prev) prev.addEventListener('click', function(){ show(i - 1); });
-      if (next) next.addEventListener('click', function(){ show(i + 1); });
-    });
-  })();
 </script>
 
 </body>
