@@ -78,6 +78,7 @@
   .work-summary{margin-top:24px;background:var(--gold-dim);border:1px solid var(--gold);border-radius:var(--r);padding:16px 20px;font-size:15px;color:var(--white);text-align:center}
   .work-summary b{color:var(--gold);font-family:'Syne',sans-serif;font-weight:700}
 
+  .section p.lead{color:var(--muted);font-size:14px;margin-bottom:24px;max-width:780px}
   footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:'Syne',sans-serif}
   footer b{color:var(--gold);font-weight:600}
 
@@ -101,8 +102,9 @@
     <div class="switcher" role="tablist" aria-label="Выбор площадки">
       <button type="button" data-platform="yandex" class="active" role="tab" aria-selected="true">Яндекс.Директ</button>
       <button type="button" data-platform="google" role="tab" aria-selected="false">Google Ads</button>
+      <button type="button" data-platform="june" role="tab" aria-selected="false">Июнь 2026</button>
     </div>
-    <div class="switcher-hint">Выбери площадку, чтобы посмотреть отчёт по ней</div>
+    <div class="switcher-hint">Выбери площадку или период, чтобы посмотреть отчёт</div>
   </div>
 </div>
 
@@ -451,6 +453,117 @@
 <!-- =================== /GOOGLE ADS =================== -->
 
 
+<!-- =================== ИЮНЬ 2026 =================== -->
+<div class="platform" data-platform="june">
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 01 · 1–7 июня 2026</div>
+    <h2>Сводка по источникам</h2>
+    <p class="lead">Конверсии Яндекс.Директ — автоатрибуция Метрики (LSCCD), 2 автоцели: клик по номеру и отправка контактных данных. Google Ads — GA4 клик по номеру телефона.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>Яндекс.Директ</th>
+            <th>Google Ads</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Расход<span class="row-sub">с НДС · валюта аккаунта</span></td>
+            <td>199,29&nbsp;BYN</td>
+            <td>123,56&nbsp;USD</td>
+          </tr>
+          <tr>
+            <td>Показы</td>
+            <td>121&nbsp;337</td>
+            <td>67&nbsp;984</td>
+          </tr>
+          <tr>
+            <td>Клики</td>
+            <td>1&nbsp;392</td>
+            <td>1&nbsp;142</td>
+          </tr>
+          <tr>
+            <td class="total">Конверсии<span class="row-sub">2 автоцели · клик по тел.</span></td>
+            <td class="total">6</td>
+            <td class="total">3</td>
+          </tr>
+          <tr>
+            <td>Стоимость конверсии<span class="row-sub">расход ÷ конверсии</span></td>
+            <td>33,22&nbsp;BYN</td>
+            <td>41,19&nbsp;USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 02 · Разбивка конверсий</div>
+    <h2>Конверсии по целям</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Цель</th>
+            <th>Яндекс.Директ</th>
+            <th>Google Ads</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Клик по номеру телефона<span class="row-sub">Автоцель Метрика 173287135 · GA4 click_tel</span></td>
+            <td>5</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Отправил контактные данные<span class="row-sub">Автоцель Метрика 339344115</span></td>
+            <td>1</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="total">Итого</td>
+            <td class="total">6</td>
+            <td class="total">3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="goals">
+  <div class="container">
+    <h3>Какие конверсии мы считаем</h3>
+    <ul>
+      <li>
+        <span class="tag">Автоцель</span>
+        <span>shulz.by — Автоцель: клик по номеру телефона</span>
+        <span class="id">Метрика 173287135</span>
+      </li>
+      <li>
+        <span class="tag">Автоцель</span>
+        <span>shulz.by — Автоцель: отправил контактные данные</span>
+        <span class="id">Метрика 339344115</span>
+      </li>
+      <li>
+        <span class="tag">Google</span>
+        <span>GA4 клик по номеру телефона</span>
+        <span class="id">GA4 click_tel</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</div>
+<!-- =================== /ИЮНЬ 2026 =================== -->
+
+
 <footer>
   <div class="container">
     OpenClaw · <b>Shulz</b> · <span id="platform-footer">Яндекс.Директ</span> · Минск
@@ -460,7 +573,7 @@
 <script>
   (function(){
     var STORE = 'shulz_report_platform';
-    var NAMES = { yandex: 'Яндекс.Директ', google: 'Google Ads' };
+    var NAMES = { yandex: 'Яндекс.Директ', google: 'Google Ads', june: 'Июнь 2026' };
 
     var buttons = document.querySelectorAll('.switcher button');
     var panels  = document.querySelectorAll('.platform');
