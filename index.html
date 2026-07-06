@@ -105,6 +105,7 @@
       <button type="button" data-platform="yandex" class="active" role="tab" aria-selected="true">Яндекс.Директ</button>
       <button type="button" data-platform="google" role="tab" aria-selected="false">Google Ads</button>
       <button type="button" data-platform="june" role="tab" aria-selected="false">Июнь 2026</button>
+      <button type="button" data-platform="july" role="tab" aria-selected="false">Июль 2026</button>
     </div>
     <div class="switcher-hint">Выбери площадку или период, чтобы посмотреть отчёт</div>
   </div>
@@ -720,6 +721,126 @@
 <!-- =================== /ИЮНЬ =================== -->
 
 
+<!-- =================== ИЮЛЬ =================== -->
+<div class="platform" data-platform="july">
+
+<!-- ── ЯНДЕКС.ДИРЕКТ ── -->
+<div class="platform-block">
+  <div class="container"><div class="platform-block-header">Яндекс.Директ</div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 01 · 2026</div>
+    <h2>Июль 2026 — прошлая неделя</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>29 июн – 5 июл</th>
+            <th class="total">Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Расход, BYN</td>
+            <td>233,52</td>
+            <td class="total">233,52</td>
+          </tr>
+          <tr>
+            <td>Конверсии</td>
+            <td>0</td>
+            <td class="total">0</td>
+          </tr>
+          <tr>
+            <td>Стоимость конверсии, BYN<span class="row-sub">расход ÷ конверсии</span></td>
+            <td>—</td>
+            <td class="total">—</td>
+          </tr>
+          <tr>
+            <td>Клики<span class="row-sub">Яндекс.Директ</span></td>
+            <td>713</td>
+            <td class="total">713</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── GOOGLE ADS ── -->
+<div class="platform-block">
+  <div class="container"><div class="platform-block-header">Google Ads</div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-num">Таблица 02 · 2026</div>
+    <h2>Июль 2026 — прошлая неделя</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>29 июн – 5 июл</th>
+            <th class="total">Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Расход, USD<span class="row-sub">Google Ads</span></td>
+            <td>78,58</td>
+            <td class="total">78,58</td>
+          </tr>
+          <tr>
+            <td>Конверсии</td>
+            <td>4</td>
+            <td class="total">4</td>
+          </tr>
+          <tr>
+            <td>Стоимость конверсии, USD<span class="row-sub">расход ÷ конверсии</span></td>
+            <td>19,65</td>
+            <td class="total">19,65</td>
+          </tr>
+          <tr>
+            <td>Клики<span class="row-sub">Google Ads</span></td>
+            <td>600</td>
+            <td class="total">600</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="goals">
+  <div class="container">
+    <h3>Какие конверсии мы считаем</h3>
+    <ul>
+      <li>
+        <span class="tag">Я.Директ</span>
+        <span>shulz.by — Автоцель: клик по номеру телефона</span>
+        <span class="id">Метрика 173287135</span>
+      </li>
+      <li>
+        <span class="tag">Я.Директ</span>
+        <span>shulz.by — Автоцель: отправил контактные данные</span>
+        <span class="id">Метрика 339344115</span>
+      </li>
+      <li>
+        <span class="tag">Google</span>
+        <span>Автоцели Метрики по источнику Google Ads</span>
+        <span class="id">Метрика 173287135 + 339344115</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</div>
+<!-- =================== /ИЮЛЬ =================== -->
+
+
 <footer>
   <div class="container">
     OpenClaw · <b>Shulz</b> · <span id="platform-footer">Яндекс.Директ</span> · Минск
@@ -729,7 +850,7 @@
 <script>
   (function(){
     var STORE = 'shulz_report_platform';
-    var NAMES = { yandex: 'Яндекс.Директ', google: 'Google Ads', june: 'Июнь 2026' };
+    var NAMES = { yandex: 'Яндекс.Директ', google: 'Google Ads', june: 'Июнь 2026', july: 'Июль 2026' };
 
     var buttons = document.querySelectorAll('.switcher button');
     var panels  = document.querySelectorAll('.platform');
