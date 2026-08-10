@@ -1233,13 +1233,35 @@
     var STORE = 'shulz_report_platform';
     var NAMES = { yandex: 'Яндекс.Директ', google: 'Google Ads', june: 'Июнь 2026', july: 'Июль 2026', august: 'Август 2026' };
 
+    // Ссылки вида #august / #август / #Август2026 — и прощаем опечатки (#julyм → july)
+    var ALIAS = {
+      'яндекс':'yandex', 'директ':'yandex', 'яндексдирект':'yandex',
+      'гугл':'google', 'гуглэдс':'google', 'googleads':'google', 'ads':'google',
+      'июнь':'june', 'июня':'june',
+      'июль':'july', 'июля':'july',
+      'август':'august', 'августа':'august', 'avgust':'august'
+    };
+
+    function resolve(raw){
+      var s = String(raw || '').replace(/^#/, '');
+      try { s = decodeURIComponent(s); } catch(e){}
+      s = s.toLowerCase().replace(/[^a-zа-яё]/g, '');
+      if(!s) return null;
+      if(NAMES[s]) return s;
+      if(ALIAS[s]) return ALIAS[s];
+      var k;
+      for(k in NAMES){ if(s.indexOf(k) === 0) return k; }
+      for(k in ALIAS){ if(s.indexOf(k) === 0) return ALIAS[k]; }
+      return null;
+    }
+
     var buttons = document.querySelectorAll('.switcher button');
     var panels  = document.querySelectorAll('.platform');
     var heroName = document.getElementById('platform-name');
     var footName = document.getElementById('platform-footer');
 
-    function activate(name){
-      if(!NAMES[name]) name = 'yandex';
+    function activate(name, syncHash){
+      name = resolve(name) || 'yandex';
       buttons.forEach(function(b){
         var on = b.dataset.platform === name;
         b.classList.toggle('active', on);
@@ -1251,16 +1273,22 @@
       heroName.textContent = NAMES[name];
       footName.textContent = NAMES[name];
       try { localStorage.setItem(STORE, name); } catch(e){}
+      // адрес в строке браузера всегда соответствует открытой вкладке — можно копировать и слать
+      if(syncHash !== false && ('#' + name) !== location.hash){
+        try { history.replaceState(null, '', '#' + name); }
+        catch(e){ location.hash = name; }
+      }
     }
 
     buttons.forEach(function(b){
       b.addEventListener('click', function(){ activate(b.dataset.platform); });
     });
 
+    window.addEventListener('hashchange', function(){ activate(location.hash, false); });
+
     var saved = null;
     try { saved = localStorage.getItem(STORE); } catch(e){}
-    var initial = (location.hash || '').replace('#','') || saved || 'yandex';
-    activate(initial);
+    activate(location.hash || saved || 'yandex');
   })();
 
 </script>
